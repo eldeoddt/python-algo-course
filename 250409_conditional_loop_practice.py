@@ -268,52 +268,52 @@
 # 너무 어렵게 생각 했다. 다른 증가 값이 있어도 별부터 찍어 보자.
 
 # 문제 11 비밀번호 생성
-# print("\n[문제 11]")
-# cnt=0
-# special = False
-# while(True):
-#     str = input("비밀 번호를 입력하세요 ")
-#     cnt += 1
-#     if(len(str)<6):
-#         print("비밀번호의 길이가 짧습니다.")
-#         continue
-#     for i in str:
-#         if(i in ["!", "@"]):
-#             special = True
-#             break
-#     if(special == True): break
-#     print("특수문자(! 또는 @) 포함되어야 합니다.")
-#
-# print("올바른 암호 입니다.")
-# print(f"귀하의 비밀번호는 {str} 이며 시도한 횟수는 {cnt} 입니다.")
+print("\n[문제 11]")
+cnt=0
+special = False
+while(True):
+    str = input("비밀 번호를 입력하세요 ")
+    cnt += 1
+    if(len(str)<6):
+        print("비밀번호의 길이가 짧습니다.")
+        continue
+    for i in str:
+        if(i in ["!", "@"]):
+            special = True
+            break
+    if(special == True): break
+    print("특수문자(! 또는 @) 포함되어야 합니다.")
 
-# break로 while을  빠져나오고 싶었는데, fo만 빠져나와서 flag변수를 추가해서 명시적으로 while을 탈출하도록 했다.
+print("올바른 암호 입니다.")
+print(f"귀하의 비밀번호는 {str} 이며 시도한 횟수는 {cnt} 입니다.")
+
+# break로 while을  빠져나오고 싶었는데, for만 빠져나와서 flag변수를 추가해서 명시적으로 while을 탈출하도록 했다.
 # continue로 길이를 먼저 체크하고 다시 입력을 받는다.
 # 입력을 받을 때마다 count를 증가시켰다.아래쪽에 두면 집계가 안되기 때문에.
 # while 사용 시에는 if로 명시적으로 탈출하자.
 
 # 문제 12 숫자 맞히기 게임
 # 2진 탐색 알고리즘 사용
-print("\n[문제 12]")
-low = 1
-high = 100
-cnt = 0
-input("1-100 중 숫자 하나를 생각하세요. 생각이 끝났으면 Enter를 입력합니다.")
-while(True):
-    mid = (low + high)/2
-    select=int(input(f"당신이 입력한 숫자는 {mid:.0f}입니다. 1.OK, 2.UP, 3.DOWN "))
-    if(select == 1):break
-    if(select == 2):
-        low=mid
-        mid+=(high-mid)/2
-        cnt += 1
-        continue
-    if(select == 3):
-        high=mid
-        mid -= (mid-low) / 2
-        cnt += 1
-        continue
-print(f"{cnt}회 만에 찾았습니다.")
+# print("\n[문제 12]")
+# low = 1
+# high = 100
+# cnt = 0
+# input("1-100 중 숫자 하나를 생각하세요. 생각이 끝났으면 Enter를 입력합니다.")
+# while(True):
+#     mid = (low + high)/2
+#     select=int(input(f"당신이 입력한 숫자는 {mid:.0f}입니다. 1.OK, 2.UP, 3.DOWN "))
+#     if(select == 1):break
+#     if(select == 2):
+#         low=mid
+#         mid+=(high-mid)/2
+#         cnt += 1
+#         continue
+#     if(select == 3):
+#         high=mid
+#         mid -= (mid-low) / 2
+#         cnt += 1
+#         continue
+# print(f"{cnt}회 만에 찾았습니다.")
 # 재미있었다.
 # 자료구조 수업에서 완벽하게 숙지하지 못했지만 손이 기억한 것 같다..
 # 논리적으로 머릿속에 그려가며 풀었는데
@@ -322,4 +322,3 @@ print(f"{cnt}회 만에 찾았습니다.")
 # up이면 현재 mid를 low로 놓고, down이면 현재 mid를 high로 놓는다.
 # 그리고 mid 계산은 입력 전에 수행한다. 사용자 입력에 따라 low/high를 재설정 하는 것이라서
 # count는 low/high를 바꾼 경우에만 증가시켰다.
-
