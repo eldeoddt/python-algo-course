@@ -310,3 +310,11 @@ for i in range(40, 90, 10):
     target = ((220-age)-num)*(i/100) + num
     print(f"강도{i}%  목표심박수:{target:.1f}bpm")
 '''
+
+# v=int(input("속도 입력  ")) # km/h
+# t=int(input("시간  ")) # 분. -> 시간으로 바꿔줘야함.
+# if(v>=60) :
+#     print("과속 주의!")
+# t=t/60
+# s=v*t
+# print(f"총 주행 거리: {s:.1f}km")
