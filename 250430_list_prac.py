@@ -55,5 +55,5 @@ print(score)
 # 값 순으로 정렬 하고 싶음..
 sorted(score.items())
 print(score)
-for i in score.keys():
+for i in score.keys(): # 전체 키들을 반환한다.
     print(i, score[i])
